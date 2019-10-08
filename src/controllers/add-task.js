@@ -26,8 +26,8 @@ let addTask = (list, task) => {
             if (validators.isPresent(obj, task)) {
 
                 //If task is present, but already marked, update
-                if (task.marked) {
-                    task.marked=!task.marked; 
+                if (obj.marked) {
+                    obj.marked=!obj.marked; 
                     break;
                 }
                 else {
