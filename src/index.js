@@ -16,7 +16,7 @@ app.listen(process.env.PORT, () => {
 });
 
 // Listen to GET @ 3000 for /listofTasks (Listing all tasks)
-app.get("/listTasks", (req, res, next) => {
+app.post("/listTasks", (req, res, next) => {
 
     // Filter the list of tasks for the same channel.
     res.send(listOfTasks.filter(task =>
