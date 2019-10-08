@@ -28,7 +28,7 @@ let addTask = (list, task) => {
                 //If task is present, but already marked, update
                 if (obj.marked) {
                     obj.marked=!obj.marked; 
-                    break;
+                    return list;
                 }
                 else {
                     return strings.ERROR_CODE_DUPLICATE_TASK;
