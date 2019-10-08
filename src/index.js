@@ -17,7 +17,7 @@ app.listen(process.env.PORT, () => {
 
 // Listen to GET @ 3000 for /listofTasks (Listing all tasks)
 app.post("/listTasks", (req, res, next) => {
-    const str = '';
+    let str = '';
     listOfTasks.filter(task =>
         task.getChannelName() == req.body.channel_name && task.getChannelId() == req.body.channel_id)
         .forEach(task => str +=task.name + ', ');
