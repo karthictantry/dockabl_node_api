@@ -17,12 +17,14 @@ app.listen(process.env.PORT, () => {
 
 // Listen to GET @ 3000 for /listofTasks (Listing all tasks)
 app.post("/listTasks", (req, res, next) => {
-
+    const str = '';
+    listOfTasks.filter(task =>
+        task.getChannelName() == req.body.channel_name && task.getChannelId() == req.body.channel_id)
+        .forEach(task => str +=task.name + ', ');
     // Filter the list of tasks for the same channel.
     res.json({
         "response_type" : strings.RESPONSE_TYPE_VALUE,
-                "text" : listOfTasks.filter(task =>
-                    task.getChannelName() == req.body.channel_name && task.getChannelId() == req.body.channel_id).toString()
+                "text" : str.substring(0, str.lastIndexOf(','))
     });
 });
 
