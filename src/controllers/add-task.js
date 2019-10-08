@@ -24,7 +24,15 @@ let addTask = (list, task) => {
 
             // Check if the 'task' object is present in the list.
             if (validators.isPresent(obj, task)) {
-                return strings.ERROR_CODE_DUPLICATE_TASK;
+
+                //If task is present, but already marked, update
+                if (task.marked) {
+                    task.marked=!task.marked; 
+                    break;
+                }
+                else {
+                    return strings.ERROR_CODE_DUPLICATE_TASK;
+                }
             }
         }
         
