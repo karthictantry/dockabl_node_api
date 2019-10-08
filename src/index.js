@@ -32,7 +32,7 @@ app.post("/addTask", (req, res, next) => {
     // Checking the method output to check for errors
     if (result === strings.ERROR_CODE_INVALID_FIELDS) {
         // ERROR!
-        res.status(403).contentType(strings.CONTENT_TYPE)
+        res.status(200).contentType(strings.CONTENT_TYPE)
         .send(
             {
                 "response_type" : strings.RESPONSE_TYPE_VALUE,
@@ -40,7 +40,7 @@ app.post("/addTask", (req, res, next) => {
         });
     } else if (result === strings.ERROR_CODE_DUPLICATE_TASK) {
         // ERROR!
-        res.status(403).contentType(strings.CONTENT_TYPE)
+        res.status(200).contentType(strings.CONTENT_TYPE)
         .send(
             {
                 "response_type" : strings.RESPONSE_TYPE_VALUE,
@@ -67,7 +67,7 @@ app.post("/markTask", (req, res, next) => {
     // Checking the method output to check for errors
     if (result === strings.ERROR_CODE_TASK_MARKED) {
         // ERROR!
-        res.status(403).contentType(strings.CONTENT_TYPE)
+        res.status(200).contentType(strings.CONTENT_TYPE)
         .send(
             {
                 "response_type" : strings.RESPONSE_TYPE_VALUE,
@@ -75,7 +75,7 @@ app.post("/markTask", (req, res, next) => {
         });
     } else if (result === strings.ERROR_CODE_TASK_NOT_EXISTS) {
         // ERROR!
-        res.status(403).contentType(strings.CONTENT_TYPE)
+        res.status(200).contentType(strings.CONTENT_TYPE)
         .send(
             {
                 "response_type" : strings.RESPONSE_TYPE_VALUE,
@@ -83,7 +83,7 @@ app.post("/markTask", (req, res, next) => {
         });
     } else if (result === strings.ERROR_CODE_INVALID_FIELDS) {
         // ERROR!
-        res.status(403).contentType(strings.CONTENT_TYPE)
+        res.status(200).contentType(strings.CONTENT_TYPE)
         .send(
             {
                 "response_type" : strings.RESPONSE_TYPE_VALUE,
