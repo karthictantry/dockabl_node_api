@@ -19,7 +19,7 @@ app.listen(process.env.PORT, () => {
 app.post("/listTasks", (req, res, next) => {
 
     // Filter the list of tasks for the same channel.
-    res.send({
+    res.json({
         "response_type" : strings.RESPONSE_TYPE_VALUE,
                 "text" : listOfTasks.filter(task =>
                     task.getChannelName() == req.body.channel_name && task.getChannelId() == req.body.channel_id)
