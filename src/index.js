@@ -19,7 +19,7 @@ app.listen(process.env.PORT, () => {
 app.post("/listTasks", (req, res, next) => {
     let str = '';
     listOfTasks.filter(task =>
-        task.getChannelName() == req.body.channel_name && task.getChannelId() == req.body.channel_id) && !task.marked
+        task.getChannelName() == req.body.channel_name && task.getChannelId() == req.body.channel_id && !task.marked) 
         .forEach(task => str +=task.name + ', ');
     // Filter the list of tasks for the same channel.
     res.json({
